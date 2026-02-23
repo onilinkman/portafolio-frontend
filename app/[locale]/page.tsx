@@ -9,6 +9,7 @@ import { title, subtitle } from "@/components/primitives";
 import { GithubIcon } from "@/components/icons";
 import { useTranslations } from "next-intl";
 import SplitText from "@/components/SplitText";
+import ScrollFloat from "@/components/ScrollFloat";
 
 export default function Home() {
 	const t = useTranslations("home");
@@ -16,67 +17,87 @@ export default function Home() {
 		console.log("All letters have animated!");
 	};
 	return (
-		<section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
-			<div className="inline-block max-w-xl text-center justify-center">
-				<br className="mb-4" />
-				<span className={title()}>{t("welcome")}&nbsp;</span>
-				<br className="mb-3" />
-				<span className={title()}>{t("myName")}</span>
+		<>
+			<section className="h-screen snap-center flex flex-col items-center justify-center gap-4 px-4">
+				<div className="inline-block max-w-xl text-center justify-center">
+					<br className="mb-4" />
+					<span className={title()}>{t("welcome")}&nbsp;</span>
+					<br className="mb-3" />
+					<span className={title()}>{t("myName")}</span>
 
-				<br/>
-				<span className={title({color:"cyan"})}>
-					{" " + t("name")}&nbsp;
-				</span>
-
-				<SplitText
-					text={t("presentation")}
-					className="text-xl font-semibold text-center mt-4"
-					delay={50}
-					duration={1.25}
-					ease="power3.out"
-					splitType="chars"
-					from={{ opacity: 0, y: 40 }}
-					to={{ opacity: 1, y: 0 }}
-					threshold={0.1}
-					rootMargin="-100px"
-					textAlign="center"
-					onLetterAnimationComplete={handleAnimationComplete}
-				/>
-			</div>
-
-			<div className="flex gap-3">
-				<Link
-					isExternal
-					className={buttonStyles({
-						color: "primary",
-						radius: "full",
-						variant: "shadow",
-					})}
-					href={siteConfig.links.docs}
-				>
-					Documentation
-				</Link>
-				<Link
-					isExternal
-					className={buttonStyles({
-						variant: "bordered",
-						radius: "full",
-					})}
-					href={siteConfig.links.github}
-				>
-					<GithubIcon size={20} />
-					GitHub
-				</Link>
-			</div>
-
-			<div className="mt-8">
-				<Snippet hideCopyButton hideSymbol variant="bordered">
-					<span>
-						Get started by editing{" "}
-						<Code color="primary">app/page.tsx</Code>
+					<br />
+					<span className={title({ color: "cyan" })}>
+						{" " + t("name")}&nbsp;
 					</span>
-				</Snippet>
-			</div>
-		</section>
+
+					<SplitText
+						text={t("presentation")}
+						className="text-xl font-semibold text-center mt-4"
+						delay={50}
+						duration={1.25}
+						ease="power3.out"
+						splitType="chars"
+						from={{ opacity: 0, y: 40 }}
+						to={{ opacity: 1, y: 0 }}
+						threshold={0.1}
+						rootMargin="-100px"
+						textAlign="center"
+						onLetterAnimationComplete={handleAnimationComplete}
+					/>
+				</div>
+
+				<div className="flex gap-3">
+					<Link
+						isExternal
+						className={buttonStyles({
+							color: "primary",
+							radius: "full",
+							variant: "shadow",
+						})}
+						href={siteConfig.links.docs}
+					>
+						Documentation
+					</Link>
+					<Link
+						isExternal
+						className={buttonStyles({
+							variant: "bordered",
+							radius: "full",
+						})}
+						href={siteConfig.links.github}
+					>
+						<GithubIcon size={20} />
+						GitHub
+					</Link>
+				</div>
+
+				<div className="mt-8">
+					<Snippet hideCopyButton hideSymbol variant="bordered">
+						<span>
+							Get started by editing{" "}
+							<Code color="primary">app/page.tsx</Code>
+						</span>
+					</Snippet>
+				</div>
+			</section>
+			<section className="h-screen snap-center flex items-center justify-center">
+				<div className="h-screen snap-center  pt-[64px]">
+					<ScrollFloat
+						animationDuration={1}
+						ease="back.inOut(2)"
+						scrollStart="center bottom+=50%"
+						scrollEnd="bottom bottom-=40%"
+						stagger={0.03}
+					>
+						React Bits
+					</ScrollFloat>
+				</div>
+			</section>
+			<section className="h-screen  snap-center flex items-center justify-center">
+				<div className="h-screen snap-center bg-red-600 pt-[64px]">
+					seccion
+				</div>
+			</section>
+		</>
 	);
 }

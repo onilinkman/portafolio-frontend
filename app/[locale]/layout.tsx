@@ -29,13 +29,13 @@ export default async function LocaleLayout({ children, params }: Props) {
 			>
 				<div
 					className={clsx(
-						"min-h-screen text-foreground bg-background font-sans antialiased",
+						"",
 						fontSans.variable,
 					)}
 				>
 					<Navbar />
-					<main className="container max-w-7xl flex-grow">
-						<div className=" w-full">
+					<main >
+						<div >
 							<Particles
 								particleColors={["#ffffff"]}
 								particleCount={400}
