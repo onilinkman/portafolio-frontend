@@ -1,9 +1,167 @@
 {
-	"home": {
-		"title": "",
-		"myName": "I'm ",
-		"name":"Christian Marban",
-		"welcome":"Welcome to the my WebSite",
-		"presentation": "I'm a web developer specializing in creating fast, scalable, and user-centric applications. I transform ideas into functional, scalable digital products."
+	"nav": {
+		"home": "Home",
+		"services": "Services",
+		"product": "Product",
+		"stack": "Stack",
+		"security": "Security",
+		"contact": "Contact",
+		"privacy": "Privacy",
+		"terms": "Terms",
+		"demo": "Request demo"
+	},
+	"portfolio": {
+		"hero": {
+			"eyebrow": "Professional WhatsApp Solutions",
+			"name": "Full Name",
+			"role": "Full Stack - WhatsApp Chatbot SaaS",
+			"intro": "I build automation platforms on WhatsApp Cloud API with a focus on compliance, security, and results. Full stack experience in TypeScript, Go, Java (Spring Boot), NestJS, React, Angular, and Flutter.",
+			"ctaPrimary": "Request demo",
+			"ctaSecondary": "View platform",
+			"chips": [
+				"WhatsApp Cloud API",
+				"B2B SaaS",
+				"Golang",
+				"Scalable architecture",
+				"Sensitive data"
+			],
+			"stats": [
+				{
+					"title": "B2B experience",
+					"description": "SaaS and automation"
+				},
+				{
+					"title": "Multi-stack",
+					"description": "Backend + Frontend"
+				},
+				{
+					"title": "WhatsApp API",
+					"description": "Real integrations"
+				}
+			]
+		},
+		"compliance": {
+			"title": "Technology provider focus",
+			"headline": "Transparency, support, and compliance",
+			"body": "This page clearly states the use of official APIs, data handling, and support channels for end customers.",
+			"items": [
+				"Use of official Meta APIs for WhatsApp",
+				"Visible privacy policy and terms",
+				"Direct support and contact channels",
+				"Event logging and audit trail",
+				"Consent and opt-out best practices",
+				"Encryption in transit and protected secrets"
+			]
+		},
+		"services": {
+			"eyebrow": "Services",
+			"items": [
+				{
+					"title": "Chatbot SaaS",
+					"description": "Design and build multi-tenant platforms to automate support and sales on WhatsApp."
+				},
+				{
+					"title": "Meta integrations",
+					"description": "Onboarding, webhooks, templates, and conversational flows with compliance and traceability."
+				},
+				{
+					"title": "Full stack architecture",
+					"description": "Robust APIs, admin panels, and real-time analytics with a security-first approach."
+				}
+			]
+		},
+		"product": {
+			"eyebrow": "SaaS product",
+			"title": "WhatsApp Chatbot Platform",
+			"body": "Go backend for messaging, campaigns, and segmentation. Web console for sales, support, and administration teams.",
+			"features": [
+				"Multi-tenant with role-based access control",
+				"Template management and opt-in/opt-out",
+				"Connectors for CRMs and ERPs",
+				"Conversion metrics and traceability",
+				"No-code flows for agents"
+			],
+			"flowTitle": "WhatsApp technical flow",
+			"flowBody": "Stable webhooks, event validation, template handling, and delivery control. Observability with metrics and alerts to ensure deliverability.",
+			"dataTitle": "Data stack",
+			"dataBody": "PostgreSQL for core, Redis for queues, and MongoDB for conversational context."
+		},
+		"stack": {
+			"eyebrow": "Stack",
+			"title": "Technologies I use",
+			"items": [
+				"TypeScript",
+				"Golang",
+				"Java + Spring Boot",
+				"NestJS",
+				"React",
+				"Angular",
+				"Flutter",
+				"PostgreSQL",
+				"MySQL",
+				"Oracle Database",
+				"MongoDB",
+				"Redis"
+			]
+		},
+		"security": {
+			"eyebrow": "Security and compliance",
+			"title": "Customer data protection",
+			"body": "We apply security best practices for sensitive data operations: least privilege, audit logs, backups, and tenant isolation.",
+			"items": [
+				"Use of official Meta APIs for WhatsApp",
+				"Visible privacy policy and terms",
+				"Direct support and contact channels",
+				"Event logging and audit trail",
+				"Consent and opt-out best practices",
+				"Encryption in transit and protected secrets"
+			]
+		},
+		"contact": {
+			"eyebrow": "Contact",
+			"title": "Let\u0027s talk about your WhatsApp chatbot",
+			"body": "Open to partnerships, customer onboarding, and B2B projects. I respond within 24 hours.",
+			"email": "Email: layera@marbanchristian.org",
+			"location": "Location: La Paz, Bolivia",
+			"availability": "Availability: Remote / On-site",
+			"legalTitle": "Legal documentation",
+			"privacyLink": "Privacy Policy",
+			"termsLink": "Terms and Conditions",
+			"disclaimer": "Meta and WhatsApp are registered trademarks of Meta Platforms, Inc. This site is not affiliated with or endorsed by Meta."
+		}
+	},
+	"legal": {
+		"privacy": {
+			"title": "Privacy Policy",
+			"lastUpdated": "Last updated: March 21, 2026",
+			"intro": "This policy describes how we collect, use, and protect information on our website and WhatsApp chatbot platform. If you have questions, contact us at layera@marbanchristian.org.",
+			"owner": "Data controller: Legal Name or Company, with registered address at Address, City, Country.",
+			"sectionInfoTitle": "Information we collect",
+			"sectionInfoBody": "Contact data (name, email, company), browser technical data, and for the platform, message data and metadata required to operate the service.",
+			"sectionUseTitle": "Use of information",
+			"sectionUseBody": "We use data to provide the service, answer inquiries, improve the platform, and comply with legal obligations. We do not sell personal data.",
+			"sectionSecurityTitle": "Security",
+			"sectionSecurityBody": "We apply access controls, encryption in transit, audit logs, and backups to protect information.",
+			"sectionRetentionTitle": "Retention",
+			"sectionRetentionBody": "We keep data only as long as necessary for the service and legal obligations. You may request deletion when applicable.",
+			"sectionRightsTitle": "Rights",
+			"sectionRightsBody": "You can request access, correction, or deletion of your data by writing to layera@marbanchristian.org.",
+			"disclaimer": "Meta and WhatsApp are registered trademarks of Meta Platforms, Inc. This site is not affiliated with or endorsed by Meta."
+		},
+		"terms": {
+			"title": "Terms and Conditions",
+			"lastUpdated": "Last updated: March 21, 2026",
+			"intro": "By using this site or platform you agree to these terms. If you do not agree, please do not use our services.",
+			"owner": "Service owner: Legal Name or Company, Address, City, Country.",
+			"sectionUseTitle": "Acceptable use",
+			"sectionUseBody": "Customers must follow WhatsApp policies, obtain proper consent, and avoid prohibited content or spam.",
+			"sectionAvailabilityTitle": "Availability and support",
+			"sectionAvailabilityBody": "We aim for high availability, but interruptions may occur due to maintenance or external causes. Support is provided via layera@marbanchristian.org.",
+			"sectionIpTitle": "Intellectual property",
+			"sectionIpBody": "The software, design, and content of this site belong to its owner. Customers retain ownership of their data and content.",
+			"sectionLiabilityTitle": "Limitation of liability",
+			"sectionLiabilityBody": "We are not liable for indirect damages or loss of profits resulting from use of the service, to the extent permitted by applicable law.",
+			"disclaimer": "Meta and WhatsApp are registered trademarks of Meta Platforms, Inc. This site is not affiliated with or endorsed by Meta."
+		}
 	}
 }

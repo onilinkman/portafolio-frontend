@@ -1,103 +1,277 @@
-"use client";
-import { Link } from "@heroui/link";
-import { Snippet } from "@heroui/snippet";
-import { Code } from "@heroui/code";
-import { button as buttonStyles } from "@heroui/theme";
+﻿import Link from "next/link";
+import { getTranslations } from "next-intl/server";
 
-import { siteConfig } from "@/config/site";
-import { title, subtitle } from "@/components/primitives";
-import { GithubIcon } from "@/components/icons";
-import { useTranslations } from "next-intl";
-import SplitText from "@/components/SplitText";
-import ScrollFloat from "@/components/ScrollFloat";
+type HomeProps = {
+	params: Promise<{ locale: string }>;
+};
 
-export default function Home() {
-	const t = useTranslations("home");
-	const handleAnimationComplete = () => {
-		console.log("All letters have animated!");
-	};
+export default async function Home({ params }: HomeProps) {
+	const { locale } = await params;
+	const t = await getTranslations({
+		locale,
+		namespace: "portfolio",
+	});
+	const basePath = `/${locale}`;
+	const chips = t.raw("hero.chips") as string[];
+	const services = t.raw("services.items") as {
+		title: string;
+		description: string;
+	}[];
+	const stack = t.raw("stack.items") as string[];
+	const productFeatures = t.raw("product.features") as string[];
+	const compliance = t.raw("compliance.items") as string[];
+	const securityItems = t.raw("security.items") as string[];
+
 	return (
-		<>
-			<section className="h-screen snap-center flex flex-col items-center justify-center gap-4 px-4">
-				<div className="inline-block max-w-xl text-center justify-center">
-					<br className="mb-4" />
-					<span className={title()}>{t("welcome")}&nbsp;</span>
-					<br className="mb-3" />
-					<span className={title()}>{t("myName")}</span>
+		<div className="bg-[radial-gradient(circle_at_top,_#e8f4ff,_#ffffff_45%,_#f8fafc_75%)] dark:bg-[radial-gradient(circle_at_top,_#0b1220,_#0b1220_35%,_#020617_75%)]">
+			<section
+				id="inicio"
+				className="relative overflow-hidden px-6 pt-24 pb-16"
+			>
+				<div className="absolute -top-32 right-0 h-[28rem] w-[28rem] rounded-full bg-[radial-gradient(circle,_rgba(14,165,233,0.35),_transparent_60%)] blur-3xl" />
+				<div className="absolute bottom-0 left-0 h-[22rem] w-[22rem] rounded-full bg-[radial-gradient(circle,_rgba(34,197,94,0.25),_transparent_60%)] blur-3xl" />
+				<div className="relative mx-auto max-w-6xl">
+					<div className="grid gap-10 lg:grid-cols-[1.15fr_0.85fr]">
+						<div>
+							<p className="text-sm font-semibold uppercase tracking-[0.28em] text-muted-foreground">
+								{t("hero.eyebrow")}
+							</p>
+							<h1 className="mt-4 text-4xl font-semibold text-foreground md:text-5xl">
+								{t("hero.name")}
+								<span className="block text-foreground/80">
+									{t("hero.role")}
+								</span>
+							</h1>
+							<p className="mt-4 text-lg text-muted-foreground">
+								{t("hero.intro")}
+							</p>
+							<div className="mt-6 flex flex-wrap gap-2">
+								{chips.map((chip) => (
+									<span
+										key={chip}
+										className="rounded-full border border-border bg-background/80 px-3 py-1 text-sm text-muted-foreground shadow-sm"
+									>
+										{chip}
+									</span>
+								))}
+							</div>
+							<div className="mt-8 flex flex-wrap gap-3">
+								<Link
+									className="rounded-full bg-foreground px-6 py-3 text-sm font-semibold text-background shadow-lg transition hover:-translate-y-0.5"
+									href="#contacto"
+								>
+									{t("hero.ctaPrimary")}
+								</Link>
+								<Link
+									className="rounded-full border border-border px-6 py-3 text-sm font-semibold text-foreground/80 transition hover:border-border"
+									href="#producto"
+								>
+									{t("hero.ctaSecondary")}
+								</Link>
+							</div>
+							<div className="mt-8 grid gap-4 sm:grid-cols-3">
+								{(
+									t.raw("hero.stats") as {
+										title: string;
+										description: string;
+									}[]
+								).map((stat) => (
+									<div
+										key={stat.title}
+										className="rounded-2xl border border-border bg-background/70 p-4"
+									>
+										<p className="text-2xl font-semibold text-foreground">
+											{stat.title}
+										</p>
+										<p className="text-sm text-muted-foreground">
+											{stat.description}
+										</p>
+									</div>
+								))}
+							</div>
+						</div>
 
-					<br />
-					<span className={title({ color: "cyan" })}>
-						{" " + t("name")}&nbsp;
-					</span>
-
-					<SplitText
-						text={t("presentation")}
-						className="text-xl font-semibold text-center mt-4"
-						delay={50}
-						duration={1.25}
-						ease="power3.out"
-						splitType="chars"
-						from={{ opacity: 0, y: 40 }}
-						to={{ opacity: 1, y: 0 }}
-						threshold={0.1}
-						rootMargin="-100px"
-						textAlign="center"
-						onLetterAnimationComplete={handleAnimationComplete}
-					/>
-				</div>
-
-				<div className="flex gap-3">
-					<Link
-						isExternal
-						className={buttonStyles({
-							color: "primary",
-							radius: "full",
-							variant: "shadow",
-						})}
-						href={siteConfig.links.docs}
-					>
-						Documentation
-					</Link>
-					<Link
-						isExternal
-						className={buttonStyles({
-							variant: "bordered",
-							radius: "full",
-						})}
-						href={siteConfig.links.github}
-					>
-						<GithubIcon size={20} />
-						GitHub
-					</Link>
-				</div>
-
-				<div className="mt-8">
-					<Snippet hideCopyButton hideSymbol variant="bordered">
-						<span>
-							Get started by editing{" "}
-							<Code color="primary">app/page.tsx</Code>
-						</span>
-					</Snippet>
+						<div className="rounded-3xl border border-border bg-background/70 p-6 shadow-xl">
+							<p className="text-sm font-semibold text-muted-foreground">
+								{t("compliance.title")}
+							</p>
+							<h2 className="mt-3 text-2xl font-semibold text-foreground">
+								{t("compliance.headline")}
+							</h2>
+							<p className="mt-3 text-sm text-muted-foreground">
+								{t("compliance.body")}
+							</p>
+							<ul className="mt-5 grid gap-3 text-sm text-muted-foreground">
+								{compliance.map((item) => (
+									<li
+										key={item}
+										className="flex items-start gap-2"
+									>
+										<span className="mt-1 h-2 w-2 rounded-full bg-emerald-500" />
+										<span>{item}</span>
+									</li>
+								))}
+							</ul>
+						</div>
+					</div>
 				</div>
 			</section>
-			<section className="h-screen snap-center flex items-center justify-center">
-				<div className="h-screen snap-center  pt-[64px]">
-					<ScrollFloat
-						animationDuration={1}
-						ease="back.inOut(2)"
-						scrollStart="center bottom+=50%"
-						scrollEnd="bottom bottom-=40%"
-						stagger={0.03}
-					>
-						React Bits
-					</ScrollFloat>
+
+			<section id="servicios" className="px-6 py-16">
+				<div className="mx-auto max-w-6xl">
+					<p className="text-sm font-semibold uppercase tracking-[0.3em] text-muted-foreground">
+						{t("services.eyebrow")}
+					</p>
+					<div className="mt-4 grid gap-6 md:grid-cols-3">
+						{services.map((service) => (
+							<div
+								key={service.title}
+								className="rounded-2xl border border-border bg-background p-6 shadow-sm"
+							>
+								<h3 className="text-xl font-semibold text-foreground">
+									{service.title}
+								</h3>
+								<p className="mt-3 text-sm text-muted-foreground">
+									{service.description}
+								</p>
+							</div>
+						))}
+					</div>
 				</div>
 			</section>
-			<section className="h-screen  snap-center flex items-center justify-center">
-				<div className="h-screen snap-center bg-red-600 pt-[64px]">
-					seccion
+
+			<section id="producto" className="px-6 py-16">
+				<div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[1fr_1fr]">
+					<div className="rounded-3xl border border-border bg-foreground p-8 text-background">
+						<p className="text-sm font-semibold uppercase tracking-[0.3em] text-muted-foreground">
+							{t("product.eyebrow")}
+						</p>
+						<h3 className="mt-4 text-3xl font-semibold">
+							{t("product.title")}
+						</h3>
+						<p className="mt-4 text-sm text-muted-foreground">
+							{t("product.body")}
+						</p>
+						<div className="mt-6 grid gap-3 text-sm text-muted-foreground">
+							{productFeatures.map((feature) => (
+								<span
+									key={feature}
+									className="flex items-center gap-2"
+								>
+									<span className="h-2 w-2 rounded-full bg-cyan-400" />
+									{feature}
+								</span>
+							))}
+						</div>
+					</div>
+					<div className="rounded-3xl border border-border bg-background p-8 shadow-sm">
+						<h3 className="text-2xl font-semibold text-foreground">
+							{t("product.flowTitle")}
+						</h3>
+						<p className="mt-4 text-sm text-muted-foreground">
+							{t("product.flowBody")}
+						</p>
+						<div className="mt-6 rounded-2xl bg-muted p-4 text-sm text-muted-foreground">
+							<p className="font-semibold text-foreground/80">
+								{t("product.dataTitle")}
+							</p>
+							<p className="mt-2">{t("product.dataBody")}</p>
+						</div>
+					</div>
 				</div>
 			</section>
-		</>
+
+			<section id="stack" className="px-6 py-16">
+				<div className="mx-auto max-w-6xl">
+					<p className="text-sm font-semibold uppercase tracking-[0.3em] text-muted-foreground">
+						{t("stack.eyebrow")}
+					</p>
+					<h3 className="mt-3 text-2xl font-semibold text-foreground">
+						{t("stack.title")}
+					</h3>
+					<div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+						{stack.map((item) => (
+							<div
+								key={item}
+								className="rounded-2xl border border-border bg-background px-4 py-3 text-sm font-semibold text-foreground/80 shadow-sm"
+							>
+								{item}
+							</div>
+						))}
+					</div>
+				</div>
+			</section>
+
+			<section id="seguridad" className="px-6 py-16">
+				<div className="mx-auto max-w-6xl rounded-3xl border border-border bg-background p-8 shadow-sm">
+					<div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
+						<div>
+							<p className="text-sm font-semibold uppercase tracking-[0.3em] text-muted-foreground">
+								{t("security.eyebrow")}
+							</p>
+							<h3 className="mt-3 text-2xl font-semibold text-foreground">
+								{t("security.title")}
+							</h3>
+							<p className="mt-4 text-sm text-muted-foreground">
+								{t("security.body")}
+							</p>
+						</div>
+						<div className="grid gap-3 text-sm text-muted-foreground">
+							{securityItems.map((item) => (
+								<div
+									key={item}
+									className="rounded-2xl border border-border bg-muted px-4 py-3"
+								>
+									{item}
+								</div>
+							))}
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="contacto" className="px-6 py-16">
+				<div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[1fr_1fr]">
+					<div>
+						<p className="text-sm font-semibold uppercase tracking-[0.3em] text-muted-foreground">
+							{t("contact.eyebrow")}
+						</p>
+						<h3 className="mt-3 text-3xl font-semibold text-foreground">
+							{t("contact.title")}
+						</h3>
+						<p className="mt-4 text-sm text-muted-foreground">
+							{t("contact.body")}
+						</p>
+						<div className="mt-6 flex flex-col gap-3 text-sm text-foreground/80">
+							<span>{t("contact.email")}</span>
+							<span>{t("contact.location")}</span>
+							<span>{t("contact.availability")}</span>
+						</div>
+					</div>
+					<div className="rounded-3xl border border-border bg-background p-6 shadow-sm">
+						<p className="text-sm font-semibold text-muted-foreground">
+							{t("contact.legalTitle")}
+						</p>
+						<div className="mt-4 flex flex-col gap-3 text-sm">
+							<Link
+								className="rounded-2xl border border-border px-4 py-3 font-semibold text-foreground/80"
+								href={`${basePath}/privacy`}
+							>
+								{t("contact.privacyLink")}
+							</Link>
+							<Link
+								className="rounded-2xl border border-border px-4 py-3 font-semibold text-foreground/80"
+								href={`${basePath}/terms`}
+							>
+								{t("contact.termsLink")}
+							</Link>
+						</div>
+						<p className="mt-6 text-xs text-muted-foreground">
+							{t("contact.disclaimer")}
+						</p>
+					</div>
+				</div>
+			</section>
+		</div>
 	);
 }

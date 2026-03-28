@@ -1,9 +1,167 @@
 {
-	"home": {
-		"title": "",
-		"myName": "Mi nombre es",
-		"name":"Christian Marban",
-		"welcome": "Bienvenido a mi sitio Web",
-		"presentation": "Soy desarrollador web especializado en crear aplicaciones rápidas, escalables y centradas en el usuario. Transformo ideas en productos digitales funcionales y listos para crecer."
+	"nav": {
+		"home": "Inicio",
+		"services": "Servicios",
+		"product": "Producto",
+		"stack": "Stack",
+		"security": "Seguridad",
+		"contact": "Contacto",
+		"privacy": "Privacidad",
+		"terms": "Terminos",
+		"demo": "Solicitar demo"
+	},
+	"portfolio": {
+		"hero": {
+			"eyebrow": "Soluciones profesionales para WhatsApp",
+			"name": "Christian Marban Callisaya",
+			"role": "Full Stack - SaaS de Chatbots WhatsApp",
+			"intro": "Construyo plataformas de automatización en WhatsApp Cloud API con enfoque en cumplimiento, seguridad y resultados. Experiencia full stack en TypeScript, Go, Java (Spring Boot), NestJS, React, Angular y Flutter.",
+			"ctaPrimary": "Solicitar demo",
+			"ctaSecondary": "Ver plataforma",
+			"chips": [
+				"WhatsApp Cloud API",
+				"SaaS B2B",
+				"Golang",
+				"Arquitectura escalable",
+				"Datos sensibles"
+			],
+			"stats": [
+				{
+					"title": "Experiencia B2B",
+					"description": "SaaS y automatización"
+				},
+				{
+					"title": "Multi-stack",
+					"description": "Backend + Frontend"
+				},
+				{
+					"title": "WhatsApp API",
+					"description": "Integraciones reales"
+				}
+			]
+		},
+		"compliance": {
+			"title": "Enfoque para ser proveedor de tecnología",
+			"headline": "Transparencia, soporte y cumplimiento",
+			"body": "Esta página deja claro el uso de APIs oficiales, el tratamiento de datos y los canales de soporte para clientes finales.",
+			"items": [
+				"Uso de APIs oficiales de Meta para WhatsApp",
+				"Politíca de privacidad y términos visibles",
+				"Canales de soporte y contacto directo",
+				"Registro de eventos y auditoría",
+				"Buenas prácticas de consentimiento y baja",
+				"Cifrado en tránsito y secretos protegidos"
+			]
+		},
+		"services": {
+			"eyebrow": "Servicios",
+			"items": [
+				{
+					"title": "SaaS de Chatbots",
+					"description": "Diseño y construcción de plataformas multi-tenant para automatizar atención y ventas en WhatsApp."
+				},
+				{
+					"title": "Integraciones Meta",
+					"description": "Onboarding, webhooks, plantillas y flujos conversacionales con cumplimiento y trazabilidad."
+				},
+				{
+					"title": "Arquitectura Full Stack",
+					"description": "APIs robustas, paneles admin y analítica en tiempo real con foco en seguridad."
+				}
+			]
+		},
+		"product": {
+			"eyebrow": "Producto SaaS",
+			"title": "Plataforma de Chatbot WhatsApp",
+			"body": "Backend en Go con servicios de mensajería, campañas y segmentación. Panel web para equipos de ventas, soporte y administración.",
+			"features": [
+				"Multi-tenant con control de acceso por roles",
+				"Gestión de plantillas y opt-in/opt-out",
+				"Conectores para CRMs y ERPs",
+				"Métricas de conversión y trazabilidad",
+				"Flujos no-code para agentes"
+			],
+			"flowTitle": "Flujo técnico para WhatsApp",
+			"flowBody": "Webhook estable, validaciones de eventos, manejo de plantillas y control de envíos. Observabilidad con métricas y alertas para garantizar entregabilidad.",
+			"dataTitle": "Stack de datos",
+			"dataBody": "PostgreSQL para core, Redis para colas y MongoDB para contexto conversacional."
+		},
+		"stack": {
+			"eyebrow": "Stack",
+			"title": "Tecnologías que domino",
+			"items": [
+				"TypeScript",
+				"Golang",
+				"Java + Spring Boot",
+				"NestJS",
+				"React",
+				"Angular",
+				"Flutter",
+				"PostgreSQL",
+				"MySQL",
+				"Oracle Database",
+				"MongoDB",
+				"Redis"
+			]
+		},
+		"security": {
+			"eyebrow": "Seguridad y cumplimiento",
+			"title": "Proteccíon de datos de clientes",
+			"body": "Aplicamos buenas prácticas de seguridad para operación con datos sensibles: máximos privilegios, registros de auditoría, backups y segmentación por cliente.",
+			"items": [
+				"Uso de APIs oficiales de Meta para WhatsApp",
+				"Politíca de privacidad y términos visibles",
+				"Canales de soporte y contacto directo",
+				"Registro de eventos y auditoría",
+				"Buenas prácticas de consentimiento y baja",
+				"Cifrado en tránsito y secretos protegidos"
+			]
+		},
+		"contact": {
+			"eyebrow": "Contacto",
+			"title": "Hablemos sobre tu chatbot WhatsApp",
+			"body": "Estoy abierto a alianzas, onboarding de clientes y proyectos B2B. Respondo en menos de 24 horas.",
+			"email": "Correo: layera@marbanchristian.org",
+			"location": "Ubicación: La Paz, Bolivia",
+			"availability": "Disponibilidad: Remoto / Presencial",
+			"legalTitle": "Documentación legal",
+			"privacyLink": "Política de Privacidad",
+			"termsLink": "Término y Condiciones",
+			"disclaimer": "Meta y WhatsApp son marcas registradas de Meta Platforms, Inc. Este sitio no está afiliado ni respaldado por Meta."
+		}
+	},
+	"legal": {
+		"privacy": {
+			"title": "Política de Privacidad",
+			"lastUpdated": "Última actialización: 21 de marzo de 2026",
+			"intro": "Esta política describe cómo recolectamos, usamos y protegemos información en nuestro sitio web y en la plataforma de chatbots en WhatsApp. Si tienes dudas, contactanos en layera@marbanchristian.org.",
+			"owner": "Responsable del tratamiento: Nombre Legal o Empresa, con domicilio en Dirección, Ciudad, País.",
+			"sectionInfoTitle": "Información que recolectamos",
+			"sectionInfoBody": "Datos de contacto (nombre, correo, empresa), datos técnicos del navegador y, en el caso de la plataforma, datos de mensajes y metadatos necesarios para operar el servicio.",
+			"sectionUseTitle": "Uso de la información",
+			"sectionUseBody": "Usamos los datos para brindar el servicio, responder consultas, mejorar la plataforma y cumplir obligaciones legales. No vendemos datos personales.",
+			"sectionSecurityTitle": "Seguridad",
+			"sectionSecurityBody": "Aplicamos controles de acceso, cifrado en tránsito, registros de auditoría y backups para proteger la información.",
+			"sectionRetentionTitle": "Retención",
+			"sectionRetentionBody": "Conservamos los datos solo mientras sea necesario para el servicio y obligaciones legales. Puedes solicitar la eliminación de datos cuando aplique.",
+			"sectionRightsTitle": "Derechos",
+			"sectionRightsBody": "Puedes solicitar acceso, rectificación o eliminación de tus datos escribiendo a layera@marbanchristian.org.",
+			"disclaimer": "Meta y WhatsApp son marcas registradas de Meta Platforms, Inc. Este sitio no está afiliado ni respaldado por Meta."
+		},
+		"terms": {
+			"title": "Términos y Condiciones",
+			"lastUpdated": "Ultima actualización: 21 de marzo de 2026",
+			"intro": "Al usar este sitio o la plataforma aceptas estos términos. Si no estás de acuerdo, por favor no uses nuestros servicios.",
+			"owner": "Titular del servicio: Nombre Legal o Empresa, Dirección, Ciudad, País.",
+			"sectionUseTitle": "Uso aceptable",
+			"sectionUseBody": "El cliente debe respetar las políticas de WhatsApp, obtener el consentimiento adecuado y evitar contenido prohibido o spam.",
+			"sectionAvailabilityTitle": "Disponibilidad y soporte",
+			"sectionAvailabilityBody": "Buscamos alta disponibilidad, pero pueden existir interrupciones por mantenimiento o causas externas. El soporte se brinda por correo en layera@marbanchristian.org.",
+			"sectionIpTitle": "Propiedad intelectual",
+			"sectionIpBody": "El software, diseño y contenidos del sitio pertenecen a su titular. El cliente conserva la propiedad de sus datos y contenidos.",
+			"sectionLiabilityTitle": "Limitación de responsabilidad",
+			"sectionLiabilityBody": "No nos hacemos responsables por daños indirectos o pérdida de beneficios derivada del uso del servicio, en la medida permitida por la ley aplicable.",
+			"disclaimer": "Meta y WhatsApp son marcas registradas de Meta Platforms, Inc. Este sitio no está afiliado ni respaldado por Meta."
+		}
 	}
 }

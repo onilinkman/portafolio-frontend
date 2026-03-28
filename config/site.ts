@@ -1,69 +1,82 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "Next.js + HeroUI",
-  description: "Make beautiful websites regardless of your design experience.",
+  name: "Nombre Apellido — Full Stack & WhatsApp SaaS",
+  description:
+    "Desarrollo SaaS de chatbots en WhatsApp Cloud API con foco en seguridad, cumplimiento y resultados.",
   navItems: [
     {
-      label: "Home",
-      href: "/",
+      label: "home",
+      href: "#inicio",
     },
     {
-      label: "Docs",
-      href: "/docs",
+      label: "services",
+      href: "#servicios",
     },
     {
-      label: "Pricing",
-      href: "/pricing",
+      label: "product",
+      href: "#producto",
     },
     {
-      label: "Blog",
-      href: "/blog",
+      label: "stack",
+      href: "#stack",
     },
     {
-      label: "About",
-      href: "/about",
+      label: "security",
+      href: "#seguridad",
+    },
+    {
+      label: "contact",
+      href: "#contacto",
+    },
+    {
+      label: "privacy",
+      href: "/privacy",
+    },
+    {
+      label: "terms",
+      href: "/terms",
     },
   ],
   navMenuItems: [
     {
-      label: "Profile",
-      href: "/profile",
+      label: "home",
+      href: "#inicio",
     },
     {
-      label: "Dashboard",
-      href: "/dashboard",
+      label: "services",
+      href: "#servicios",
     },
     {
-      label: "Projects",
-      href: "/projects",
+      label: "product",
+      href: "#producto",
     },
     {
-      label: "Team",
-      href: "/team",
+      label: "stack",
+      href: "#stack",
     },
     {
-      label: "Calendar",
-      href: "/calendar",
+      label: "security",
+      href: "#seguridad",
     },
     {
-      label: "Settings",
-      href: "/settings",
+      label: "contact",
+      href: "#contacto",
     },
     {
-      label: "Help & Feedback",
-      href: "/help-feedback",
+      label: "privacy",
+      href: "/privacy",
     },
     {
-      label: "Logout",
-      href: "/logout",
+      label: "terms",
+      href: "/terms",
     },
   ],
   links: {
     github: "https://github.com/onilinkman",
-    twitter: "https://twitter.com/hero_ui",
-    docs: "https://heroui.com",
-    discord: "https://discord.gg/9b6yyZKmH4",
-    sponsor: "https://patreon.com/jrgarciadev",
+    twitter: "https://twitter.com/tu-usuario",
+    docs: "mailto:contacto@tu-dominio.com",
+    discord: "https://www.linkedin.com/in/tu-usuario",
+    sponsor: "mailto:contacto@tu-dominio.com",
   },
 };

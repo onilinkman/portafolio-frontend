@@ -25,29 +25,29 @@ export default async function LocaleLayout({ children, params }: Props) {
 	return (
 		<NextIntlClientProvider locale={locale}>
 			<Providers
-				themeProps={{ attribute: "class", defaultTheme: "dark" }}
+				themeProps={{ attribute: "class", defaultTheme: "light" }}
 			>
 				<div
 					className={clsx(
-						"",
+						"min-h-screen",
 						fontSans.variable,
 					)}
 				>
 					<Navbar />
-					<main >
-						<div >
+					<main>
+						<div className="relative">
 							<Particles
-								particleColors={["#ffffff"]}
-								particleCount={400}
-								particleSpread={10}
-								speed={0.3}
-								particleBaseSize={100}
+								particleColors={["#0ea5e9", "#22c55e", "#f97316"]}
+								particleCount={220}
+								particleSpread={9}
+								speed={0.2}
+								particleBaseSize={80}
 								moveParticlesOnHover
 								alphaParticles={true}
 								disableRotation={false}
 								pixelRatio={1}
 							/>
-							{children}
+							<div className="relative z-10">{children}</div>
 						</div>
 					</main>
 				</div>
